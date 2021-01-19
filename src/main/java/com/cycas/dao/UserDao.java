@@ -16,8 +16,8 @@ public interface UserDao {
     int deleteByPrimaryKey(Long id);
 
     @Insert({
-            "insert into t_user(note,name) values ",
-            "(#{note,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR})"
+            "insert into t_user(id,note,name) values ",
+            "(#{id},#{note,jdbcType=VARCHAR},#{name,jdbcType=VARCHAR})"
     })
     int insert(User record);
 
@@ -25,6 +25,9 @@ public interface UserDao {
 
     @Select("SELECT * FROM t_user WHERE id = #{id}")
     User selectByPrimaryKey(@Param("id") Long id, @Param("monthStr") String monthStr);
+
+    @Select("SELECT * FROM t_user ")
+    List<User> selectAll();
 
     int updateByPrimaryKeySelective(User record);
 

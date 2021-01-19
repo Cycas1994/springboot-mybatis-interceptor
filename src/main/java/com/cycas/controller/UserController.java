@@ -48,20 +48,17 @@ public class UserController {
     }
 
     public static void main(String[] args) {
-        List<SyncSysRoleFuncDTO> list = new ArrayList<>();
-        SyncSysRoleFuncDTO d1 = new SyncSysRoleFuncDTO();
-        d1.settSysRoleId(1);
-        SyncSysRoleFuncDTO d2 = new SyncSysRoleFuncDTO();
-        d2.settSysRoleId(1);
-        SyncSysRoleFuncDTO d3 = new SyncSysRoleFuncDTO();
-        d3.settSysRoleId(1);
-        SyncSysRoleFuncDTO d4 = new SyncSysRoleFuncDTO();
-        d4.settSysRoleId(2);
-        list.add(d1);
-        list.add(d2);
-        list.add(d3);
-        list.add(d4);
-        Set<Integer> set = list.stream().map(SyncSysRoleFuncDTO::gettSysRoleId).collect(Collectors.toSet());
-        System.out.println(set);
+
+        System.out.println(getDigit());
+    }
+
+    public static boolean getDigit() {
+
+        try {
+            int i = 1/0;
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
     }
 }

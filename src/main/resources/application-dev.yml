@@ -17,6 +17,6 @@ spring:
 mybatis:
   config-location: classpath:mybatis_dev.xml
 
-logging:
-  level:
-    root: debug
+#logging:
+#  level:
+#    root: debug

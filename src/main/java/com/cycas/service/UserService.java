@@ -6,7 +6,7 @@ import com.github.pagehelper.PageInfo;
 
 public interface UserService {
 
-    int saveUser();
+    int saveUser(Long i);
 
     User selectByPrimaryKey(Long id, String monthStr);
 
@@ -14,4 +14,5 @@ public interface UserService {
 
     PageInfo<User> queryUsersByCondition(String name, String companyId, int pageNum, int pageSize);
 
+    void select();
 }
