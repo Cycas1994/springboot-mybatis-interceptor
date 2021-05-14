@@ -31,10 +31,10 @@
             <!-- always总是返回PageInfo类型,check检查返回类型是否为PageInfo,none返回Page -->
             <property name="returnPageInfo" value="none" />
         </plugin>
-        <!--<plugin interceptor="com.cycas.sharding.TableShardingInterceptor">
+        <plugin interceptor="com.cycas.sharding.TableShardingInterceptor">
             <property name="shardByCompany" value="t_user" />
             <property name="shardByMonth" value="t_user" />
-        </plugin>-->
+        </plugin>
 
     </plugins>
 </configuration>

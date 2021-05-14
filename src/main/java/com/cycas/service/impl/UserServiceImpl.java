@@ -37,30 +37,18 @@ public class UserServiceImpl implements UserService {
     private ThreadPoolTaskExecutor threadPoolTaskExecutor;
 
     @Override
-    @Transactional
+//    @Transactional
     public int saveUser(Long i) {
         User user = new User();
         user.setId(i);
         user.setName("name" + i);
         user.setNote("note" + i);
         userMapper.insert(user);
-
-        TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronizationAdapter() {
-            @Override
-            public void afterCommit() {
-                threadPoolTaskExecutor.execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        User user = userMapper.selectByPrimaryKey(i, "");
-                        if (Objects.nonNull(user)) {
-                            logger.info("query user success!");
-                        } else {
-                            logger.error("query user failure!");
-                        }
-                    }
-                });
-            }
-        });
+        try {
+            Thread.sleep(10000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return 0;
     }
 

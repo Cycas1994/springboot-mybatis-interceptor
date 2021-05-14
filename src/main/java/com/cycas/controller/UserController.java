@@ -41,9 +41,7 @@ public class UserController {
 
     @GetMapping("/save")
     public Integer save() {
-//        userService.saveUser();
-//        workTypeService.batchSaveRoleFunc();
-        workTypeService.deleteRoleFunc();
+        userService.saveUser(1L);
         return 1;
     }
 
